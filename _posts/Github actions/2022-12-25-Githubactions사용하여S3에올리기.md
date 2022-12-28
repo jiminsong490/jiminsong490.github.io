@@ -16,17 +16,17 @@ pin: false
  5. 코드 작성
 
 
- # 1. AWS IAM 사용자 등록
+# 1. AWS IAM 사용자 등록
  - github actions에서 버킷에 파일을 올리기 위해서는 권한이 부여된 IAM 사용자가 필요합니다.
  - IAM 사용자를 추가하고 AWS 자격 증명 유형은 엑세스 키 방식으로 생성해줍니다.
  - S3에만 올릴 것이므로 다른 권한은 추가하지 않고 AmazonS3FullAccess만 추가해줍니다.
  - 완료 후 .csv 다운로드하여 계정 관리
 
- # 2. AWS S3 버킷 생성
+# 2. AWS S3 버킷 생성
  - AWS S3로 접속
  - 버킷 만들기 -> 이름 작성(대문자 사용 안됨) -> 퍼블릭 엑세스 차단 설정 해제 -> 버킷 만들기
 
- # 3. github에 secret 생성하기
+# 3. github에 secret 생성하기
  - 1에서 만들었던 IAM 사용자의 ID,PASSWORD를 저장해야한다.
  - repository의 Settings -> Secrets -> Actions -> New repository secret
  - AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY를 생성하고 그에 맞는 ID,PASSWORD를 작성 후 저장
@@ -34,10 +34,10 @@ pin: false
  - APPLICATION_DBCONFIG_PROPERTIES라는 secret을 만들어 파일 내용을 저장해준다.
 
 
- # 4. .github/workflows 디렉토리 생성 후 @@.yml 파일 생성
+# 4. .github/workflows 디렉토리 생성 후 @@.yml 파일 생성
  - github actions을 사용하기 위해 디렉토리 최상단에 .github/workflows/uploadS3.yml 파일을 생성해주었다.
 
- # 5. 코드 작성
+# 5. 코드 작성
 
 ```java
 on:
@@ -90,7 +90,7 @@ jobs:
         run: aws s3 cp --region ap-northeast-2 ./build.zip s3://awesomelydelicious/build/build.zip
 ```
 
- # 결과
+# 결과
  - pr 후 merge에 성공하면 Actions에서 진행상황을 알 수 있음
 
 # 참고
