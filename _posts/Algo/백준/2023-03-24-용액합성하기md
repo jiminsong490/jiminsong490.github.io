@@ -1,0 +1,60 @@
+---
+title: 14921번(용액 합치기)
+author: jimin
+date: 2023-03-24 00:00:00 +0900
+categories: [Algo, 백준]
+tags: [이분탐색]
+pin: false
+---
+
+# 해결
+
+ !["용액 합치기"](/assets/img/postpic/Algo/%EB%B0%B1%EC%A4%80/%EC%9A%A9%EC%95%A1%20%ED%95%A9%EC%84%B1%ED%95%98%EA%B8%B0.jpeg)
+
+# 코드
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+
+        int N = Integer.parseInt(br.readLine());
+        st = new StringTokenizer(br.readLine());
+        int[] input = new int[N];
+        int result = Integer.MAX_VALUE;
+        for(int i =0; i < N; i++) {
+            input[i] = Integer.parseInt(st.nextToken());
+        }
+        Arrays.sort(input); // 이분탐색을 위한 정렬
+        for(int i = 0; i < N; i++){
+            int goal = -1 * input[i]; // 0을 만들기 위한 최적값
+            int idx = Arrays.binarySearch(input,goal);
+            if(idx < 0) {
+                idx = ((idx + 1) * -1); // 값이 없으면 들어가야하는 자리값 계산
+            }
+            else {
+                result = 0;
+                break;
+            }
+            for(int j = 0; j <= 1; j++) {
+                int nIdx = idx - j;
+                if(nIdx >= N || nIdx < 0 || nIdx == i) continue;
+                int num = input[nIdx] + input[i];
+                if(Math.abs(result) > Math.abs(num)) result = num;
+            }
+        }
+        System.out.println(result);
+    }
+}
+
+```
+
+# 참고
+
+ - 직접구현
