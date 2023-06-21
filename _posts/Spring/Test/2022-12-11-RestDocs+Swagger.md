@@ -45,6 +45,7 @@ pin: false
 | 테스트 강제| <span style="color:#008000">O</span> , 신뢰도 좋음 | <span style="color:red">X</span> , 신뢰도 별로|
 | 난이도        | <span style="color:red">어려움</span>| <span style="color:#008000">쉬움</span>  |
 | 코드 가독성       |<span style="color:#008000">좋음</span>            |<span style="color:red">안좋음</span>
+
 <br>
 
 ## 각각의 장점만 가져와서 사용할 수 있을까?
@@ -387,17 +388,17 @@ bootJar {
 # 결과
 
 - 결과적으로 총 3가지를 확인할 수 있다.
-    1. 기존에 사용해오던 Swagger ( 테스트를 통과하지 않은 API를 확인할 수 있는 Swagger )
+    1. **기존에 사용해오던 Swagger** ( 테스트를 통과하지 않은 API를 확인할 수 있는 Swagger )
         - http://localhost:8080/swagger-ui/index.html
             
             ![기존 Swagger](/assets/img/postpic/API%20%EB%AA%85%EC%84%B8%EC%84%9C/%EA%B8%B0%EC%A1%B4%20Swagger.png)
             
-    2. RestDocs
+    2. **RestDocs**
         - http://localhost:8080/docs/index.html
             
             ![RestDocs](/assets/img/postpic/API%20%EB%AA%85%EC%84%B8%EC%84%9C/RestDocs.png)
 
-    3. Swagger + RestDocs ( 테스트를 통과한, RestDocs에 명세된 API만 확인 할 수 있는 Swagger )
+    3. **Swagger + RestDocs** ( 테스트를 통과한, RestDocs에 명세된 API만 확인 할 수 있는 Swagger )
         - http://localhost:8080/swagger/swagger-ui.html
             
             ![Swagger + RestDocs](/assets/img/postpic/API%20%EB%AA%85%EC%84%B8%EC%84%9C/Swagger%20%2B%20RestDocs.png)
@@ -407,10 +408,10 @@ bootJar {
 
 블로그
 
-- https://jaehhh.tistory.com/120
-- https://tech.kakaopay.com/post/openapi-documentation/
-- https://backtony.github.io/spring/2021-10-15-spring-test-3/
-- https://gruuuuu.github.io/programming/openapi/
+- [https://jaehhh.tistory.com/120](https://jaehhh.tistory.com/120)
+- [https://tech.kakaopay.com/post/openapi-documentation/](https://tech.kakaopay.com/post/openapi-documentation/)
+- [https://backtony.github.io/spring/2021-10-15-spring-test-3/](https://backtony.github.io/spring/2021-10-15-spring-test-3/)
+- [https://gruuuuu.github.io/programming/openapi/](https://gruuuuu.github.io/programming/openapi/)
 - [https://jwkim96.tistory.com/274](https://jwkim96.tistory.com/274)
 - [https://helloworld.kurly.com/blog/spring-rest-docs-guide/#밋밋한게-아쉬우니까-spring-rest-docs-에-swagger-를-넣어보자](https://helloworld.kurly.com/blog/spring-rest-docs-guide/#%EB%B0%8B%EB%B0%8B%ED%95%9C%EA%B2%8C-%EC%95%84%EC%89%AC%EC%9A%B0%EB%8B%88%EA%B9%8C-spring-rest-docs-%EC%97%90-swagger-%EB%A5%BC-%EB%84%A3%EC%96%B4%EB%B3%B4%EC%9E%90)
 
