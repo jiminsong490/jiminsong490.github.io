@@ -41,7 +41,7 @@ pin: false
 |           | RestDocs        | Swagger|
 |-----------|:-----------------|:--------|
 |명세서 자동생성| <span style="color:#008000">O</span>| <span style="color:#008000">O</span>    |
-| 웹 테스트   | <span style="color:red">X</span>| <span style="color:#008000">O</span>     |
+| 요청, 응답 테스트   | <span style="color:red">X</span>| <span style="color:#008000">O</span>     |
 | 테스트 강제| <span style="color:#008000">O</span> , 신뢰도 좋음 | <span style="color:red">X</span> , 신뢰도 별로|
 | 난이도        | <span style="color:red">어려움</span>| <span style="color:#008000">쉬움</span>  |
 | 코드 가독성       |<span style="color:#008000">좋음</span>            |<span style="color:red">안좋음</span>
