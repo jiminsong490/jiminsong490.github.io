@@ -64,7 +64,7 @@ pin: false
 
 # 적용하기
 
-# build.gradle
+## build.gradle
 
 - plugin
 
@@ -165,7 +165,7 @@ bootJar {
 
 ```
 
-# RestDocs 적용
+## RestDocs 적용
 
 1. **테스트 코드를 작성한다.** 
     - 테스트 코드가 성공한다면 build.gradle에서 설정했던 경로인 "build/generated-snippets"에 스니펫이 생성된다.
@@ -345,7 +345,7 @@ bootJar {
 4. **jar 파일 실행 후 http://localhost:8080/docs/index.html 로 접속한다.**
     - 위에서 jar 파일의 docs에 html 파일들을 포함시켜놨기 때문에 해당 경로로 접속 시 RestDocs로 만든 API 명세서를 확인할 수 있다.
 
-# Swagger 적용
+## Swagger 적용
 
 - 위 **RestDocs 적용**에서 yaml 파일을 생성했고 jar 파일에 포함시켜 놨기 때문에 swagger-ui만 생성해주면 된다.
 1. **swagger-ui를 다운받는다**
