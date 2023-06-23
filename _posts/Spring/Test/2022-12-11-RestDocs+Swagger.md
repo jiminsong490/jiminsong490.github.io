@@ -121,6 +121,7 @@ tasks.register("restDocsTest", Test) {
    }
    finalizedBy "asciidoctor"
    finalizedBy "openapi3"
+   finalizedBy "bearerAuthentication"
 }
 
 tasks.named("asciidoctor") {
@@ -141,6 +142,25 @@ openapi3 {
          'RestDocs를 이용한 API 명세서를 확인하고 싶으시다면 http://localhost:8080/docs/index.html 로 접속해주세요.'
    version = "${project.version}"
    format = 'yaml'
+}
+
+tasks.register("bearerAuthentication") {
+    // epages사의 restdocs-api-spec 라이브러리에는 bearer 설정이 없음, 생성된 yaml 파일에 bearer 설정을 문자열로 추가
+	doLast {
+		def apiSpecFile = file('build/api-spec/openapi3.yaml')
+		def contentToAdd =
+				"  securitySchemes:\n" +
+				"    bearerAuth:\n" +
+						"      type: http\n" +
+						"      scheme: bearer\n" +
+						"      bearerFormat: JWT\n" +
+						"\n"+
+				"security:\n" +
+				"  - bearerAuth: []"
+		def existingContent = apiSpecFile.text
+		def updatedContent = existingContent + contentToAdd
+		apiSpecFile.write(updatedContent)
+	}
 }
 ```
 
