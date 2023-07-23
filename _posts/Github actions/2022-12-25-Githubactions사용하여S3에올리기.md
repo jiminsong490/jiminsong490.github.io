@@ -1,9 +1,9 @@
 ---
-title: Github actions 사용하여 S3에 올리기
+title: Github Actions 사용하여 S3에 올리기
 author: jimin
 date: 2022-12-25 00:00:00 +0900
-categories: [Github_actions]
-tags: [Github_actions, AWS, CI/CD]
+categories: [Github_Actions]
+tags: [Github_Actions, AWS, CI/CD]
 pin: false
 ---
 
