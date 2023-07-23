@@ -65,14 +65,14 @@ pin: false
 - 하나 이상의 Job을 실행하는 자동화 프로세스
 - `YAML` 파일로 정의
 - .github/workflows 에 작성
-- https://docs.github.com/ko/actions/learn-github-actions/understanding-github-actions
+- [https://docs.github.com/ko/actions/learn-github-actions/understanding-github-actions](https://docs.github.com/ko/actions/learn-github-actions/understanding-github-actions)
 
 ## Events
 
 - Workflow를 실행시키는 `트리거` 역할
 - Github를 통해 발생하는 활동, 스캐줄링, 수동
 - 다양한 방법으로 실행시킬 수 있기 때문에 CI/CD뿐만 아니라 다양한 곳에 사용 가능
-- https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+- [https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on)
 
 ## Runners
 
@@ -95,7 +95,7 @@ pin: false
 
 - 복잡하고 반복적인 작업을 재사용 할 수 있도록 제공되는 일종의 작업 공유 메커니즘
 - Github Marketplace에서 수많은 action 사용 가능
-- https://github.com/marketplace?type=actions
+- [https://github.com/marketplace?type=actions](https://github.com/marketplace?type=actions)
 
 # Github Actions 환경변수
 
