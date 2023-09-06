@@ -1,7 +1,7 @@
 ---
-title: title
+title: Spring batch 알아보기
 author: jimin
-date: 2023-@-@ 00:00:00 +0900
+date: 2023-08-10 00:00:00 +0900
 categories: [Java, Spring batch]
 tags: [Spring, Batch]
 pin: false
