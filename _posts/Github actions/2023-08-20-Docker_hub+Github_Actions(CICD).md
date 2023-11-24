@@ -7,6 +7,124 @@ tags: [Github_Actions, Spring_boot, CI/CD]
 pin: false
 ---
 
+# Github Actions
+
+# CI/CD
+
+### **CI**
+
+- `지속적인 통합(Continuous Integration)`을 의미
+- 소스/버전 관리에 대한 변경 사항을 정기적으로 확인하여 모든 사람에게 동일 작업 기반을 제공
+- `빌드`와 `테스트`를 자동으로 실행하여 동작을 확인하고 변경으로 인해 문제가 생기는 부분이 없도록 보장
+
+### CD
+
+- `지속적인 배포(Continuous Deployment)`를 의미
+- CI가 성공적으로 통과하면 수동 개입 없이 해당 변경 사항이 프로덕션에 자동으로 배포
+
+# Github Actions란?
+
+- 지속적인 통합 및 지속적인 배포(CI/CD) 플랫폼
+- `빌드`, `테스트`, `배포` 파이프라인을 자동화할 수 있음
+- CI/CD 플랫폼
+  - Jenkins
+    - 무료
+    - Reference 및 사용자층과 정보가 많음
+    - Windows, macOS 또는 openSUSE, Red Hat, Ubuntu와 같은 다양한 리눅스 OS에 사용가능
+    - 설치 및 사용이 간단
+      <br>
+  - TravisCI
+    - 무료 버전과 기업용 버전(유료)이 있음
+      - 오픈 소스 프로젝트 일 경우(public repo) 무료로 사용 가능
+    - 간결하고 직관적인 웹 인터페이스를 제공하는 인터넷 기반의 CI 서비스
+    - Github와 연동하여 Commit/Push를 기반으로 CI가 자동 동작하며, Push 외에도 Pull Request에도 반응하도록 설계되어 있음
+      <br>
+  - CircleCI
+    - Linux, macOS, Android, and Windows 운영체제에서 사용 가능
+    - 일정 한도 내에서 무료로 사용 가능
+    - Git에 Push를 하면 자동으로 테스트를 진행하여 검사 결과를 알려 주어 문제점에 대해 바로 알림을 보내줌. 이를 통해 협업시 발생할 수 있는 파일충돌이나 에러를 잡을 수 있음. 그리고 문제가 없다면 서버에 배포까지 자동으로 이루어짐
+      <br>
+  - TeamCity
+    - Linux, macOS, Windows 등의 모든 운영체제에서 사용 가능
+    - DevOps 파이프라인을 세부적으로 시각화해줌
+    - 테스트 기록을 유지해주고 불안정한 테스트의 경우 신뢰도 낮음으로 표시함
+    - 실시간으로 모든 사항이 보고되므로 이슈를 프로젝트 팀원에게 할당가능
+    - IDE (Jetbrains)에 TeamCity를 통합하면 따로 브랜치를 생성하거나 코드를 커밋할 필요 없이 빌드, 확인, 자동화 테스트 수행까지 완료할 수 있음
+      <br>
+  - Github Actions
+    - 무료
+    - Github Marketplace
+    - GitHub 플랫폼 하나에서 모든 CI/CD 과정을 해결 가능
+
+# Github Actions 이해
+
+![전체](/assets/img/postpic/GithubActions/전체.png)
+
+## Workflows
+
+- 하나 이상의 Job을 실행하는 자동화 프로세스
+- `YAML` 파일로 정의
+- .github/workflows 에 작성
+- [https://docs.github.com/ko/actions/learn-github-actions/understanding-github-actions](https://docs.github.com/ko/actions/learn-github-actions/understanding-github-actions)
+
+## Events
+
+- Workflow를 실행시키는 `트리거` 역할
+- Github를 통해 발생하는 활동, 스캐줄링, 수동
+- 다양한 방법으로 실행시킬 수 있기 때문에 CI/CD뿐만 아니라 다양한 곳에 사용 가능
+- [https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on)
+
+## Runners
+
+- `독립된` **가상 머신** 또는 **컨테이너**로 Job을 실행하는 서버
+- 각 러너는 한 번에 하나의 Job만 실행 가능
+- Ubuntu Linux, Windows, macOS 제공
+
+## Jobs
+
+- 일련의 Step으로 구성된 하나의 처리 단위
+- 병렬로 실행되기 때문에 서로 의존성 x, 설정을 통해 의존성 주입 가능
+
+## Steps
+
+- 동일한 Runner 내에서 실행
+- 작성한 순서대로 실행되어 서로 종속적
+- 셸 스크립트, action 실행
+
+## Actions
+
+- 복잡하고 반복적인 작업을 재사용 할 수 있도록 제공되는 일종의 작업 공유 메커니즘
+- Github Marketplace에서 수많은 action 사용 가능
+- [https://github.com/marketplace?type=actions](https://github.com/marketplace?type=actions)
+
+# Github Actions 환경변수
+
+- 민감한 정보를 담은 환경변수는 .gitignore에 추가해 Github에 올리지 않음
+- workflow 진행 시 Github 소스코드를 사용하게 되는데 환경변수가 없어 정상적으로 실행 할 수 없음
+
+### 환경변수 등록
+
+1. 환경변수를 등록하고 싶은 repository에 접속
+2. Settings>Security>Secrets and variables>Actions>New repository secret
+
+   ![환경변수1](/assets/img/postpic/GithubActions/환경변수1.png)
+
+3. Name에는 변수명을, Secret에는 값을 입력, Add secret
+
+   ![환경변수2](/assets/img/postpic/GithubActions/환경변수2.png)
+
+4. 생성한 secret 확인, 생성한 secret의 값은 다시 확인 할 수 없음
+
+   ![환경변수3](/assets/img/postpic/GithubActions/환경변수3.png)
+
+- workflow 내에서 접근 시 `${{secrets.SECRET_KEY_NAME}}`으로 접근
+
+```yaml
+steps:
+  - name: write env
+    run: echo "MY_ENV=${{secrets.MY_ENVIRONMENT}}" >> .env
+```
+
 # 구현
 
 ![CI/CD](/assets/img/postpic/GithubActions/CI:CD%20workflow.png)
